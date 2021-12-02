@@ -12,7 +12,14 @@
 
 <div>
     <p>
-            {{ event.name_event }} : {{ event.description }}
+            {{ event.name_event }} : {{ event.description }} 
+            {% if event.recurring == True %} <span>😀</span>
+            {% elif event.recurring == False %} <span>😔</span>
+            
+
+
+            
+            {% endif %}
     </p>
 </div>
 
@@ -35,15 +42,9 @@
     <textarea name="description" id="description" cols="30" rows="1"></textarea>
     <br>
     <label for="recurring">Is this event recurring?</label>
-    <input type="checkbox" name="recurring" id="recurring">
+    <input type="checkbox" name="recurring" id="recurring" default="False">
     <br>
     <input type="submit" value="Add Event">
-
-
-
-
-
-
 
 </form>
 
