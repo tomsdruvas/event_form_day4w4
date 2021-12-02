@@ -9,13 +9,42 @@
 {% block content %}
     
 {% for event in events %}
+
 <div>
     <p>
             {{ event.name_event }} : {{ event.description }}
     </p>
 </div>
+
 {% endfor %}
+<!-- date, name_event, num_guests, location, description, recurring -->
+<form action="/events" method="post">
+    <label for="name_event">Name of the event:</label>
+    <input type="text" name="name_event" id="name_event">
+    <br>
+    <label for="date">Date: </label>
+    <input type="date" name="date" id="date">
+    <br>
+    <label for="num_guests">Number of guests:</label>
+    <input type="number" name="num_guests" id="num_guests">
+    <br>
+    <label for="location">Location</label>
+    <input type="text" name="location" id="location">
+    <br>
+    <label for="description">Description</label>
+    <textarea name="description" id="description" cols="30" rows="1"></textarea>
+    <br>
+    <label for="recurring">Is this event recurring?</label>
+    <input type="checkbox" name="recurring" id="recurring">
+    <br>
+    <input type="submit" value="Add Event">
 
 
+
+
+
+
+
+</form>
 
 {% endblock  %}
